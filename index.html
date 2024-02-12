@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title >JS Accordeon</title>
+    <style>
+        h1{color: rgb(156, 44, 78);}
+        .according{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 450px;
+            border: 1px solid palevioletred;
+        }
+        .according-title{
+            color:bisque;
+            background-color:crimson;
+            padding: 10px;
+            transition:background 2s;
+        }
+        .according-title:hover{background:rgb(204, 75, 138);}
+        .according-content{
+            background:rgb(253, 217, 223);
+            padding: 10px;
+            display: none;
+        }
+        .according-item{
+            margin-bottom:10px;
+        }
+        .according-item.active .according-content{
+            display:block;
+            
+        }
+   </style>
+</head>
+<body>
+ <h1>Simple Accordeon</h1>
+ <div class="according"> 
+    <div class="according-item">
+        <div class="according-title">
+            Accordeon Title 1
+        </div>
+            <div class="according-content">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tempore, explicabo dicta harum nam doloribus magni fugiat distinctio adipisci tenetur vel non sapiente reiciendis facilis, sunt illum nisi, voluptas sint.
+            </div>
+       
+    </div>
+    <div class="according"> 
+        <div class="according-item">
+            <div class="according-title">
+                Accordeon Title 2
+            </div>
+                <div class="according-content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tempore, explicabo dicta harum nam doloribus magni fugiat distinctio adipisci tenetur vel non sapiente reiciendis facilis, sunt illum nisi, voluptas sint.
+                </div>
+           
+        </div>
+        <div class="according"> 
+            <div class="according-item">
+                <div class="according-title">
+                    Accordeon Title 3
+                </div>
+                    <div class="according-content">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tempore, explicabo dicta harum nam doloribus magni fugiat distinctio adipisci tenetur vel non sapiente reiciendis facilis, sunt illum nisi, voluptas sint.
+                    </div>
+               
+            </div>
+            <div class="according"> 
+                <div class="according-item">
+                    <div class="according-title">
+                        Accordeon Title 4
+                    </div>
+                        <div class="according-content">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tempore, explicabo dicta harum nam doloribus magni fugiat distinctio adipisci tenetur vel non sapiente reiciendis facilis, sunt illum nisi, voluptas sint.
+                        </div>
+                   
+                </div>
+ </div>
+ <script>
+    const according_items=document.querySelectorAll(".according-item");
+    according_items.forEach(item=>{
+        const title=item.querySelector(".according-title");
+        const content=item.querySelector(".according-content");
+        title.addEventListener('click',()=>{item.classList.toggle("active");});
+    });
+ </script>
+</body>
+</html>
